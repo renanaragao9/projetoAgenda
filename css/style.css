@@ -108,4 +108,9 @@
     #home-link {
         display: none;
     }
+
+    .delete-form {
+        display: inline-flex;
+    }
+    
 }
