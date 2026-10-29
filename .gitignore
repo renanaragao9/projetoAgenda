@@ -1,0 +1,9 @@
+# Variáveis de ambiente (contém credenciais)
+.env
+
+# Dependências do Composer
+/vendor/
+
+# Cache do PHPUnit
+.phpunit.result.cache
+.phpunit.cache/

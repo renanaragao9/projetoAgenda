@@ -1,6 +1,6 @@
 <?php
-    include_once("config/url.php");
-    include_once("config/process.php");
+    include_once(__DIR__ . "/../config/url.php");
+    include_once(__DIR__ . "/../config/process.php");
 
     // Limpa a mensagem
     if(isset($_SESSION['msg'])) {

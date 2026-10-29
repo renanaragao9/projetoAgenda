@@ -1,5 +1,5 @@
 <?php
-    include_once("templates/header.php");
+    include_once(__DIR__ . "/../templates/header.php");
 ?>
     
     <div class="container">
@@ -22,15 +22,15 @@
                 <tbody>
                     <?php foreach($contacts as $contact): ?>
                         <tr>
-                            <td scope="row" class="col-id"><?= $contact["id"] ?></td>
-                            <td scope="row"><?= $contact["name"] ?></td>
-                            <td scope="row"><?= $contact["phone"] ?></td>
+                            <td scope="row" class="col-id"><?= htmlspecialchars($contact["id"]) ?></td>
+                            <td scope="row"><?= htmlspecialchars($contact["name"]) ?></td>
+                            <td scope="row"><?= htmlspecialchars($contact["phone"]) ?></td>
                             <td class="actions">
-                                <a href="<?= $BASE_URL ?>show.php?id=<?= $contact["id"] ?>"><i class="fa fa-eye check-icon"></i></a>
-                                <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
-                                <form class="delete-form" action="<?= $BASE_URL ?>config/process.php" method="POST">
+                                <a href="<?= $BASE_URL ?>show.php?id=<?= urlencode($contact["id"]) ?>"><i class="fa fa-eye check-icon"></i></a>
+                                <a href="<?= $BASE_URL ?>edit.php?id=<?= urlencode($contact["id"]) ?>"><i class="far fa-edit edit-icon"></i></a>
+                                <form class="delete-form" action="<?= $BASE_URL ?>process.php" method="POST">
                                     <input type="hidden" name="type" value="delete">
-                                    <input type="hidden" name="id" value="<?= $contact["id"] ?>">
+                                    <input type="hidden" name="id" value="<?= htmlspecialchars($contact["id"]) ?>">
                                     <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
                                 </form>
                             </td>
@@ -44,5 +44,5 @@
     </div>
 
 <?php
-    include_once("templates/footer.php");
+    include_once(__DIR__ . "/../templates/footer.php");
 ?>

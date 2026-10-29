@@ -1,11 +1,11 @@
 <?php
-    include_once("templates/header.php");
+    include_once(__DIR__ . "/../templates/header.php");
 ?>
     
     <div class="container">
-        <?php include_once("templates/backbtn.php"); ?>
+        <?php include_once(__DIR__ . "/../templates/backbtn.php"); ?>
         <h1 id="main-title">Criar contato</h1>
-        <form id="create-form" action="<?= $BASE_URL ?>config/process.php" method="POST">
+        <form id="create-form" action="<?= $BASE_URL ?>process.php" method="POST">
             <input type="hidden" name="type" value="create">
             <div class="form-group">
                 <label for="name">Nome do contato:</label>
@@ -24,5 +24,5 @@
     </div>
 
 <?php
-    include_once("templates/footer.php");
+    include_once(__DIR__ . "/../templates/footer.php");
 ?>
